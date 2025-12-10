@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Playwrite+NZ+Guides&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Arvo', serif;
+  color: slategrey;
+}
+
+.fancy-font {
+  font-family: 'Playwrite NZ Guides', serif;
+}
+
+@keyframes glowUpDown {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 0 10px rgba(232, 232, 236, 0.4);
+  }
+  50% {
+    transform: translateY(-6px);
+    box-shadow: 0 0 18px rgba(233, 233, 237, 0.7);
+  }
+}
+
+.animate-glow-updown {
+  animation: glowUpDown 2.4s ease-in-out infinite;
+}
