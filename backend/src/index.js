@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cookieParser from "cookie-parser"
 import authRouter from "./routes/auth.route.js"
 import diaryRouter from "./routes/diary.route.js"
+import pingRoute from "./routes/ping.route.js"
 import { dbConnect } from "./lib/db.js";
 import cors from "cors";
 import path from "path";
@@ -22,6 +23,7 @@ app.use(cors({
 
 app.use("/api/auth", authRouter);
 app.use("/api/diary", diaryRouter);
+app.use("/", pingRoute);
 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static(path.join(__dirname, "../frontend/dist")))
